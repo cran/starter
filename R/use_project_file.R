@@ -38,8 +38,9 @@ use_project_file <- function(name = NULL, filename = NULL,
 
   # checking name is in selected template
   if (is.null(name) || !name %in% names(template)) {
-    stop(paste("Argument `name=` is not valid. Must be one of\n",
-               paste(shQuote(names(template)), collapse = ", ")))
+    paste("Argument `name=` is not valid. Must be one of\n",
+          paste(shQuote(names(template)), collapse = ", ")) %>%
+    stop(call. = FALSE)
   }
 
   # only keeping file selected
@@ -79,14 +80,12 @@ use_project_file <- function(name = NULL, filename = NULL,
 #' @rdname use_project_file
 #' @export
 use_project_gitignore <- function(filename = NULL, template = NULL) {
-  use_project_file(name = "gitignore", filename = filename,
-                   template = template)
+  use_project_file(name = "gitignore", filename = filename, template = template)
 }
 
 #' @rdname use_project_file
 #' @export
 use_project_readme <- function(filename = NULL, template = NULL) {
-  use_project_file(name = "readme", filename = filename,
-                   template = template)
+  use_project_file(name = "readme", filename = filename, template = template)
 }
 
