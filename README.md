@@ -7,7 +7,7 @@
 
 [![R-CMD-check](https://github.com/ddsjoberg/starter/workflows/R-CMD-check/badge.svg)](https://github.com/ddsjoberg/starter/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/ddsjoberg/starter/branch/main/graph/badge.svg)](https://codecov.io/gh/ddsjoberg/starter?branch=main)
+coverage](https://codecov.io/gh/ddsjoberg/starter/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ddsjoberg/starter?branch=main)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/starter)](https://CRAN.R-project.org/package=starter)
 <!-- badges: end -->
@@ -40,12 +40,11 @@ create_project(
   open = FALSE # don't open project in new RStudio session
 )
 #> v Using 'Default Project Template' template
-#> v Writing folder 'C:/Users/sjobergd/AppData/Local/Temp/Rtmp27btX5/My Project Folder/'
+#> v Writing folder 'C:/Users/sjobergd/AppData/Local/Temp/Rtmp8o24jv/My Project Folder/'
 #> v Writing files 'README.md', '.gitignore', 'My Project Folder.Rproj', '.Rprofile'
 #> v Initialising Git repo
-#> v Setting active project to '<no active project>'
 #> v Initialising renv project
-#> * renv infrastructure has been generated for project "C:/Users/sjobergd/AppData/Local/Temp/Rtmp27btX5/My Project Folder".
+#> * renv infrastructure has been generated for project "C:/Users/sjobergd/AppData/Local/Temp/Rtmp8o24jv/My Project Folder".
 ```
 
 ## Example Templates
@@ -53,13 +52,12 @@ create_project(
 Check out examples of starter templates currently being used.
 
 ``` r
-devtools::install_github("ddsjoberg/hotfun")
+devtools::install_github("ddsjoberg/bstfun")
 create_project(
   path = fs::path(tempdir(), "My Project Folder"),
-  template = hotfun::project_template
+  template = bstfun::project_templates[["hot"]]
 )
 
-devtools::install_github("ddsjoberg/bstfun")
 create_project(
   path = fs::path(tempdir(), "My Project Folder"),
   template = bstfun::project_templates[["default"]]

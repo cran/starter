@@ -1,3 +1,11 @@
+# starter 0.1.7
+
+* Allowing users to use their template to override function arguments in `create_project()`. This way, if the user never uses git, for example, this can be communicated in the template, rather than needing to change the function argument every time.
+
+* Added `create_project(symlink=)` argument indicating whether or not to place a symbolic link to the folder indicated in `create_project(path_data=).`
+
+* Updated `.Rprofile` start-up message for new repositories to include the `renv::snapshot()` step.
+
 # starter 0.1.6
 
 * Updated `create_symlink()` to pass the full path to `R.utils::createLink(link=)` instead of just the folder name. This solves an issue when creating symbolic links without full admin rights.

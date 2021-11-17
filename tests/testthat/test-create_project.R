@@ -6,6 +6,19 @@ test_that("create_project() works", {
       path = proj_dir,
       git = NA,
       renv = NA,
+      symlink = NA,
+      open = FALSE # don't open project in new RStudio session
+    ),
+    NA
+  )
+
+  override_template <- project_templates[["default"]]
+  attr(override_template, "arg_override") <- list(git = FALSE, renv = FALSE)
+  expect_error(
+    create_project(
+      path = proj_dir,
+      template = override_template,
+      overwrite = TRUE,
       open = FALSE # don't open project in new RStudio session
     ),
     NA
