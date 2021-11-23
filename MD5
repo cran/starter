@@ -1,7 +1,7 @@
-02f3d7ef2777a23c4b63e8f580606cb8 *DESCRIPTION
+fa543f7778f6d2a99808ec84a1be2f78 *DESCRIPTION
 7ab166357b37ef6356862041856551d8 *NAMESPACE
-b63c6d71d8a99a65d518980bb88970ad *NEWS.md
-8a224dcaff999074aa432646bc168fdc *R/create_project.R
+2412c45bbc898f4e3598d7fb613064ab *NEWS.md
+537a57ab84e62d99dd036694d64590e1 *R/create_project.R
 254185d0cd3edc386681916f5608bce5 *R/create_symlink.R
 6bd39fd0408d4f60be7233077240bfa7 *R/starter-package.R
 f43311d1db072ab4c7da75c6342307d8 *R/sysdata.rda
@@ -11,12 +11,12 @@ da9d08bb756b1571c6d4d350b5143dce *build/vignette.rds
 302c382a5dd35503ea6c414086b1f632 *inst/WORDLIST
 c0a8dbf95cb362261b0ff21232123c83 *inst/doc/create_project.R
 9fa26b818fc68b148a9bd28d7cf3d906 *inst/doc/create_project.Rmd
-66355c219a6df5cd45d9c7b21bf54f24 *inst/doc/create_project.html
+d91cd1dd77273370525f1f534510a980 *inst/doc/create_project.html
 4789b0091c4d1d0e9d75b98cfbe1b33f *inst/project_templates/default_gitignore.txt
 87582136c6dca8a2817335b4e647154d *inst/project_templates/default_readme.md
 a26c0094b2842a5de4467eb61f552c76 *inst/project_templates/default_rprofile.R
 c0d8a16d60ea991f59d558ef9a0cfaaa *inst/project_templates/default_rproj.Rproj
-9441555f4f5df870a5792beae7362bd5 *man/create_project.Rd
+d34069d02dc0f0286a75ecce9206e6be *man/create_project.Rd
 912ad827b1ffee0a456d22aa2951bdf7 *man/create_symlink.Rd
 502a5f8dd6ba90060101596366cb7d58 *man/figures/README-pressure-1.png
 9837e39719ad5b573e2ccc9a304aa59a *man/starter-package.Rd
