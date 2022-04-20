@@ -1,6 +1,6 @@
 Package: starter
 Title: Starter Kit for New Projects
-Version: 0.1.8
+Version: 0.1.9
 Authors@R: 
     person(given = "Daniel D.",
            family = "Sjoberg",
@@ -30,8 +30,8 @@ Encoding: UTF-8
 Language: en-US
 RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2021-11-23 22:14:18 UTC; SjobergD
+Packaged: 2022-04-20 17:18:15 UTC; SjobergD
 Author: Daniel D. Sjoberg [aut, cre] (<https://orcid.org/0000-0003-0862-2018>)
 Maintainer: Daniel D. Sjoberg <danield.sjoberg@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-11-23 23:20:02 UTC
+Date/Publication: 2022-04-20 17:40:02 UTC

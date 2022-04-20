@@ -66,7 +66,7 @@ my_template <-
     )),
     gitignore = rlang::expr(list(
       template_filename = system.file("project_templates/default_gitignore.txt", package = "starter"), 
-      filename = "gitignore.txt", 
+      filename = ".gitignore", 
       glue = TRUE
     ))
   )
