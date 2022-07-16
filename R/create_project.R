@@ -57,26 +57,27 @@ create_project <- function(path, path_data = NULL, template = "default",
     override_arg_list <- attr(template, "arg_override")
 
     # print note about args being set
-    override_arg_list %>%
-      purrr::iwalk(
-        function(arg, name) {
-          if (!identical(arg, eval(parse(text = name))))
-            ui_done("Using template argument override {ui_code(paste(name, deparse(arg, width.cutoff = 200L), sep = ' = '))}")
-        }
-      )
+
+    walk2(
+      override_arg_list,
+      names(override_arg_list),
+      function(arg, name) {
+        if (!identical(arg, eval(parse(text = name))))
+          cli::cli_alert_success("Using template argument override {.code {paste(name, deparse(arg, width.cutoff = 200L), sep = ' = ')}}")
+      }
+    )
     list2env(override_arg_list, envir = rlang::current_env())
   }
 
   # ask user -------------------------------------------------------------------
+  if (!isTRUE(git) && is_git(path)) git <- TRUE # if folder is already git, don't ask about it.
+
   if (is.na(git))
-    git <- ifelse(!interactive(), TRUE, ui_yeah("Initialise Git repo?",
-                                                n_no = 1, shuffle = FALSE))
+    git <- ifelse(!interactive(), TRUE, ui_yeah("Initialise Git repo?"))
   if (is.na(renv))
-    renv <- ifelse(!interactive(), TRUE, ui_yeah("Initialise renv project?",
-                                                 n_no = 1, shuffle = FALSE))
+    renv <- ifelse(!interactive(), TRUE, ui_yeah("Initialise renv project?"))
   if (is.na(symlink))
-    symlink <- ifelse(!interactive(), TRUE, ui_yeah("Place symbolic link?",
-                                                    n_no = 1, shuffle = FALSE))
+    symlink <- ifelse(!interactive(), TRUE, ui_yeah("Place symbolic link?"))
 
   # import template ------------------------------------------------------------
   template <- evaluate_project_template(template, path, git, renv, symlink)
@@ -96,7 +97,7 @@ create_project <- function(path, path_data = NULL, template = "default",
       target = glue::glue("{path_data}"),
       link = fs::path(glue::glue("{path}"), "secure_data")
     )
-    ui_done("Creating symbolic link to data folder {ui_path(path_data)}")
+    cli::cli_alert_success("Creating symbolic link to data folder {.file {path_data}}")
   }
 
   # initializing git repo ------------------------------------------------------
@@ -104,14 +105,14 @@ create_project <- function(path, path_data = NULL, template = "default",
 
   # initializing renv project --------------------------------------------------
   if (isTRUE(renv)) {
-    ui_done("Initialising {ui_field('renv')} project")
+    cli::cli_alert_success("Initialising {.pkg renv} project")
     # set up structure of renv project
     renv::scaffold(project = path, settings = renv.settings)
   }
 
   # if user added a path to a script, run it -----------------------------------
   if (!is.null(attr(template, "script_path"))) {
-    ui_done("Sourcing template script")
+    cli::cli_alert_success("Sourcing template script")
     source(file = attr(template, "script_path"), local = rlang::current_env())
   }
 
@@ -137,7 +138,7 @@ evaluate_project_template <- function(template, path, git, renv, symlink) {
   }
   attr(template, "label") %||%
     "User-defined Template" %>%
-    {ui_done("Using {ui_value(.)} template")}
+    {cli::cli_alert_success("Using {.val {.}} template")}
 
   script_path <- attr(template, "script_path") %>% eval()
 
@@ -147,14 +148,13 @@ evaluate_project_template <- function(template, path, git, renv, symlink) {
   },
   warning = function(w) {warning(w)},
   error = function(e) {
-    ui_oops(
+    cli::cli_alert_danger(
       paste(
-        "There was as error evaluating the the list defining the project template.",
-        "If this is a template stored in the package, please file",
-        "a GitHub Issue illustrating the error. If this is a personal template,",
+        "There was as error evaluating the the list defining the project template.\n",
+        "If this is a template stored in the package, please file\n",
+        "a GitHub Issue illustrating the error. If this is a personal template,\n",
         "review the vignette on creating a personal project template."
-      ) %>%
-        stringr::str_wrap()
+      )
     )
     stop(e)
   })
@@ -189,26 +189,26 @@ check_template_structure <- function(selected_template) {
     # check each files meta data is a named list
     if (!rlang::is_list(selected_template[[i]]) ||
         !rlang::is_named(selected_template[[i]]))
-      glue::glue("Template meta data for {ui_field(i)} must be a named list.") %>%
+      glue::glue("Template meta data for '{i}' must be a named list.") %>%
       stop(call. = FALSE)
     # check the named list has the correct names
     if (!setequal(names(selected_template[[i]]), c("template_filename", "filename", "glue")) &&
         !setequal(names(selected_template[[i]]), c("template_filename", "filename", "copy")))
-      glue::glue("Expecting elements of template list {ui_field(i)} to have ",
-                 "names {ui_value(c('template_filename', 'filename', 'glue'))}.") %>%
+      glue::glue("Expecting elements of template list '{i}' to have ",
+                 "names {paste(shQuote(c('template_filename', 'filename', 'glue'), type = 'csh'), collapse = ', ')}.") %>%
       stop(call. = FALSE)
     # check the types for each element are correct
     copy_or_glue <- names(selected_template[[i]]) %>% intersect(c("glue", "copy"))
     if (!rlang::is_string(selected_template[[i]][["template_filename"]]) ||
         !rlang::is_string(selected_template[[i]][["filename"]]) ||
         !rlang::is_logical(selected_template[[i]][[copy_or_glue]]))
-      glue::glue("Expecting elements of template list {ui_field(i)} to have specific classes: ",
-                 "{ui_value('template_filename')} and  {ui_value('filename')} must be strings ",
-                 "and {ui_value(copy_or_glue)} logical.") %>%
+      glue::glue("Expecting elements of template list '{i}' to have specific classes: ",
+                 "'template_filename') and  'filename' must be strings ",
+                 "and {copy_or_glue} logical.") %>%
       stop(call. = FALSE)
     # check the template file exists
     if (!fs::file_exists(selected_template[[i]][["template_filename"]]))
-      glue::glue("Template file {ui_value(selected_template[[i]][['template_filename']])} ",
+      glue::glue("Template file '{selected_template[[i]][['template_filename']]}' ",
                  "does not exist.") %>%
       stop(call. = FALSE)
 
@@ -224,7 +224,7 @@ eval_nested_lists <- function(template, path, git, renv) {
   template_evaluated <-
     vector(mode = "list", length = length(template)) %>%
     stats::setNames(names(template)) %>%
-    purrr::map(~list())
+    map(~list())
   # iterating over list to evaluate quoted/expr elements
   for (i in seq_len(length(template))) {
     if (rlang::is_list(template[[i]])) {
@@ -236,7 +236,7 @@ eval_nested_lists <- function(template, path, git, renv) {
       }
       # remove empty elements after evaluating
       template_evaluated[i] <-
-        purrr::compact(template[[i]]) %>%
+        compact(template[[i]]) %>%
         list() %>%
         stats::setNames(names(template[i]))
     }
@@ -247,14 +247,14 @@ eval_nested_lists <- function(template, path, git, renv) {
   }
 
   # remove empty elements after evaluating and return
-  purrr::compact(template_evaluated)
+  compact(template_evaluated)
 }
 
 eval_if_call_or_expr <- function(x, path, git, renv)  {
   # strings that may be needed in the evaluation of some strings
   folder_name <- basename(path)
   folder_first_word <-
-    stringr::str_split(folder_name, pattern = ' |-', simplify = T)[, 1] %>%
+    strsplit(x = folder_name, split = ' |-')[[1]][1] %>%
     tolower()
   if (rlang::is_call(x) || rlang::is_expression(x)) x <- eval(x)
   x
@@ -265,7 +265,7 @@ writing_files_folders <- function(selected_template, path,
   # creating the base project folder -------------------------------------------
   if (!dir.exists(path)) {
     fs::dir_create(path, recurse = TRUE)
-    ui_done("Writing folder {ui_path(path)}")
+    cli::cli_alert_success("Writing folder {.file {path}}")
   }
 
   # symbolic link text ----------------------------------------------------------
@@ -273,29 +273,29 @@ writing_files_folders <- function(selected_template, path,
   symbolic_link <-
     ifelse(
       !is.null(path_data),
-      stringr::str_glue('starter::create_symlink(to = "{fs::path_norm(path_data)}")'),
+      glue::glue('starter::create_symlink(to = "{fs::path_norm(path_data)}")'),
       'starter::create_symlink(to = "<secure data path>")'
     )
   folder_name <- basename(path)
 
   # creating project folder(s) -------------------------------------------------
   selected_template %>%
-    purrr::map_chr(purrr::pluck, "filename") %>%
+    map_chr("filename") %>%
     dirname() %>%
-    purrr::discard(~. == ".") %>%
+    discard(~. == ".") %>%
     unique() %>%
-    purrr::walk(
+    walk(
       function(.x) {
         if (!fs::dir_exists(fs::path(path, .x))) {
           fs::dir_create(fs::path(path, .x), recurse = TRUE)
-          ui_done("Creating {ui_path(fs::path(path, .x))}")
+          cli::cli_alert_success("Creating {.file {fs::path(path, .x)}}")
         }
       }
     )
 
   # tibble of each file in template --------------------------------------------
   df_files <-
-    tibble::tibble(file_abbrv = names(selected_template)) %>%
+    dplyr::tibble(file_abbrv = names(selected_template)) %>%
     dplyr::rowwise() %>%
     dplyr::mutate(
       filename = selected_template[[.data$file_abbrv]]$filename,
@@ -305,13 +305,13 @@ writing_files_folders <- function(selected_template, path,
     )
   df_files$write_file <-
     seq_len(nrow(df_files)) %>%
-    purrr::map_lgl(
+    map_lgl(
       function(i) {
         if (!df_files$file_exists[i]) return(TRUE)
         if (isTRUE(overwrite)) return(TRUE)
         if (isFALSE(overwrite)) return(FALSE)
         if (!interactive()) return(FALSE)
-        msg <- paste("{ui_path(df_files$filename[i])} already exists.",
+        msg <- paste("{.file {df_files$filename[i]}} already exists.",
                      "Would you like to overwrite it?")
         return(ui_yeah(msg))
       }
@@ -321,7 +321,7 @@ writing_files_folders <- function(selected_template, path,
   df_files <- df_files %>% dplyr::filter(.data$write_file)
 
   # writing template files to folder -------------------------------------------
-  purrr::walk(
+  walk(
     seq_len(nrow(df_files)),
     function(i) {
       # if glue file contents, importing as string, evaluating glue::glue, and writing to file
@@ -340,13 +340,13 @@ writing_files_folders <- function(selected_template, path,
       }
     }
   )
-  ui_done("Writing files {ui_value(df_files$filename)}")
+  cli::cli_alert_success("Writing files {.val {df_files$filename}}")
 }
 
 initialise_git <- function(git, path) {
   # initializing git repo ------------------------------------------------------
-  if (isTRUE(git)) {
-    ui_done("Initialising {ui_field('Git')} repo")
+  if (isTRUE(git) && !is_git(path)) {
+    cli::cli_alert_success("Initialising {.field Git} repo")
     # if there is an error setting up, printing note about the error
     tryCatch({
       # Configure Git repository
@@ -358,17 +358,16 @@ initialise_git <- function(git, path) {
       )
     },
     error = function(e) {
-      ui_oops(
+      cli::cli_alert_danger(
         paste(
-          "There was an error in {ui_code('gert::git_init()')} while",
-          "initialising the Git repo.",
-          "Have you installed Git and set it up?",
-          "Refer to the book 'Happy Git and GitHub for the useR'",
+          "There was an error in {.code gert::git_init()} while\n",
+          "initialising the Git repo.\n",
+          "Have you installed Git and set it up?\n",
+          "Refer to the book 'Happy Git and GitHub for the useR'\n",
           "for step-by-step instructions on getting started with Git."
-        ) %>%
-          stringr::str_wrap()
+        )
       )
-      ui_code_block("https://happygitwithr.com/install-git.html")
+      cli::cli_alert("{.url https://happygitwithr.com/install-git.html}")
       # setting git to FALSE as no git repo exists
       git <- FALSE
     })
@@ -376,11 +375,11 @@ initialise_git <- function(git, path) {
 }
 
 copy_to_glue <- function(x) {
-  purrr::map(
+  map(
     x,
     ~switch(
       "copy" %in% names(.x),
-      purrr::list_modify(.x, glue = !.x$copy, copy = NULL)
+      modifyList(.x, val = list(glue = !.x$copy, copy = NULL))
     ) %||% .x
   )
 }
@@ -389,3 +388,8 @@ copy_to_glue <- function(x) {
 isFALSE = function(x) {
   is.logical(x) && length(x) == 1L && !is.na(x) && !x
 }
+
+is_git <- function(path = ".") {
+  fs::dir_exists(path) && fs::dir_exists(path = fs::path(path, ".git"))
+}
+

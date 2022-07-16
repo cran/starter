@@ -12,7 +12,7 @@ library(starter)
 # specifying project folder location (folder does not yet exist)
 project_path <- fs::path(tempdir(), "My Project Folder")
 
-## ---- comment=""--------------------------------------------------------------
+## -----------------------------------------------------------------------------
 create_project(
   path = project_path,
   open = FALSE # don't open project in new RStudio session
