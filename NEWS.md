@@ -1,3 +1,7 @@
+# starter 0.1.12
+
+* Removed `browser()` that was left in the package from a previous debugging session.
+
 # starter 0.1.11
 
 * Removed {usethis} dependency. Moved {fs} and {readr} from 'Imports' to 'Suggests'.

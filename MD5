@@ -1,7 +1,7 @@
-52c3e3346b3409db541ed7c4f748178b *DESCRIPTION
+bfbbcd411af5690c02145f263d40228d *DESCRIPTION
 d066f101d2956cf07717e059c06378b3 *NAMESPACE
-acba913c15bb0ae02dd33114e69f1bde *NEWS.md
-62fc341506d9ce511f5f2d94f8ce958e *R/create_project.R
+a15a042bf188f3164d0a9f5ce6ad9ec7 *NEWS.md
+b5e44de45c7b21e2c6bf9561bd1b1cdf *R/create_project.R
 cc8ab81879332dab8c8283e4c1d02f92 *R/create_symlink.R
 c10ca97a2be4a6de068863814cae13b6 *R/data.R
 e3e1d88289adf6deadef12a8072518fd *R/starter-package.R
@@ -17,7 +17,7 @@ cce9fe75a5112b4583c2ae5acf921892 *R/utils-safely.R
 617fb923d35f6b71d2dc81a33f1486b6 *inst/WORDLIST
 a20c9cc74ac2d8bab5403b7cfb0dcc25 *inst/doc/create_project.R
 707e598ba820c6438c2dbfdd8794a547 *inst/doc/create_project.Rmd
-f01794b652561c30947d6a3cab3b3978 *inst/doc/create_project.html
+f532a343240bbd35c83a4b42fa5f6615 *inst/doc/create_project.html
 9005dc990f0bc29f74ed23d701dbcfa2 *inst/project_templates/analysis_template/analysis.Rmd
 30af5bee9048979f8106bb2daf22dd8a *inst/project_templates/analysis_template/derived_variables.xlsx
 40d3dd31618d44b4b23c01536c24fbe7 *inst/project_templates/analysis_template/doc_template.docx
