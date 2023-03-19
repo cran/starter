@@ -1,7 +1,7 @@
-bfbbcd411af5690c02145f263d40228d *DESCRIPTION
+79e637f17a8c534ac27b0e1ce3658979 *DESCRIPTION
 d066f101d2956cf07717e059c06378b3 *NAMESPACE
-a15a042bf188f3164d0a9f5ce6ad9ec7 *NEWS.md
-b5e44de45c7b21e2c6bf9561bd1b1cdf *R/create_project.R
+3f3d8aff9ac3b7fa2204ccde94db543c *NEWS.md
+a1c1bbca9a1c35f3bf4e49ac0313d577 *R/create_project.R
 cc8ab81879332dab8c8283e4c1d02f92 *R/create_symlink.R
 c10ca97a2be4a6de068863814cae13b6 *R/data.R
 e3e1d88289adf6deadef12a8072518fd *R/starter-package.R
@@ -11,13 +11,13 @@ d3dd692c24183ef6885a962550a35d30 *R/use_project_file.R
 9073e864cf31f8ffb5ad484611aad407 *R/utils-mappers.R
 cce9fe75a5112b4583c2ae5acf921892 *R/utils-safely.R
 18604511a42ef89e1a67dcf133634bde *R/utils-walkers.R
-405456bc86e7361c2cc76751510bae00 *README.md
-353c696c7997b8ce44d030d4135f3d3c *build/vignette.rds
+68043315ffbb18c64757087d3efcaa72 *README.md
+f120f892d5b45169f72f9dd618e27ca3 *build/vignette.rds
 216c04ab71cf056adf71801086f8ebdf *data/project_templates.rda
 617fb923d35f6b71d2dc81a33f1486b6 *inst/WORDLIST
 a20c9cc74ac2d8bab5403b7cfb0dcc25 *inst/doc/create_project.R
 707e598ba820c6438c2dbfdd8794a547 *inst/doc/create_project.Rmd
-f532a343240bbd35c83a4b42fa5f6615 *inst/doc/create_project.html
+41211a9402cb92212a370328c98416b9 *inst/doc/create_project.html
 9005dc990f0bc29f74ed23d701dbcfa2 *inst/project_templates/analysis_template/analysis.Rmd
 30af5bee9048979f8106bb2daf22dd8a *inst/project_templates/analysis_template/derived_variables.xlsx
 40d3dd31618d44b4b23c01536c24fbe7 *inst/project_templates/analysis_template/doc_template.docx
