@@ -1,3 +1,7 @@
+# starter 0.1.15
+
+* The {stringr} package was added to Suggests due to upcoming changes in the {rmarkdown} package. (#47, @yihui)
+
 # starter 0.1.14
 
 * Removed dependency on the {here} package and replaced with {rprojroot}.

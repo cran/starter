@@ -1,11 +1,11 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 library(dplyr)
 
-## ---- message=FALSE-----------------------------------------------------------
+## ----message=FALSE------------------------------------------------------------
 # loading packages
 library(starter)
 
@@ -18,13 +18,13 @@ create_project(
   open = FALSE # don't open project in new RStudio session
 )
 
-## ---- comment = "", echo=FALSE------------------------------------------------
+## ----comment = "", echo=FALSE-------------------------------------------------
 readr::read_file(fs::path(project_path, "README.md")) %>% cat()
 
-## ---- comment = "", echo=FALSE------------------------------------------------
+## ----comment = "", echo=FALSE-------------------------------------------------
 readr::read_file(fs::path(project_path, ".gitignore")) %>% cat()
 
-## ---- comment = "", echo=FALSE------------------------------------------------
+## ----comment = "", echo=FALSE-------------------------------------------------
 readr::read_file(system.file("project_templates/default_readme.md", package = 'starter')) %>% cat()
 
 ## -----------------------------------------------------------------------------
@@ -35,7 +35,7 @@ my_template <-
     rproj = list()
   )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  readme <-
 #    list(
 #      template_filename = system.file("project_templates/default_readme.md", package = "starter"),
@@ -43,7 +43,7 @@ my_template <-
 #      glue = TRUE
 #    )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  rproj <-
 #    rlang::expr(list(
 #      template_filename = system.file("project_templates/default_rproj.Rproj", package = "starter"),
@@ -71,7 +71,7 @@ my_template <-
     ))
   )
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  analysis <-
 #    list(
 #      template_filename = "C:/project_templates/template_analysis.Rmd",
@@ -82,7 +82,7 @@ my_template <-
 ## -----------------------------------------------------------------------------
 attr(my_template, "label") <- "My 1st Project Template"
 
-## ---- include=FALSE, echo=FALSE-----------------------------------------------
+## ----include=FALSE, echo=FALSE------------------------------------------------
 unlink(project_path, recursive = TRUE)
 
 ## -----------------------------------------------------------------------------

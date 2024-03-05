@@ -359,22 +359,23 @@ section</a>.</p>
 <p>Let’s create a new project and inspect the results. The new project
 will be created in a the folder called
 <code>&quot;My Project Folder&quot;</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(starter)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># specifying project folder location (folder does not yet exist)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>project_path <span class="ot">&lt;-</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;My Project Folder&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># loading packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(starter)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># specifying project folder location (folder does not yet exist)</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>project_path <span class="ot">&lt;-</span> fs<span class="sc">::</span><span class="fu">path</span>(<span class="fu">tempdir</span>(), <span class="st">&quot;My Project Folder&quot;</span>)</span></code></pre></div>
 <p>Let’s set up our new project.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_project</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> project_path,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">open =</span> <span class="cn">FALSE</span> <span class="co"># don&#39;t open project in new RStudio session</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;Default Project Template&quot; template</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;C:/Users/SjobergD/AppData/Local/Temp/RtmpWkfxKI/My Project Folder&#39;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;.gitignore&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.Rprofile&quot;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * renv infrastructure has been generated for project &quot;C:/Users/SjobergD/AppData/Local/Temp/RtmpWkfxKI/My Project Folder&quot;.</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">create_project</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">path =</span> project_path,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">open =</span> <span class="cn">FALSE</span> <span class="co"># don&#39;t open project in new RStudio session</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;Default Project Template&quot; template</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&#39;</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;.gitignore&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.Rprofile&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder/renv.lock&quot;.</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&quot;.</span></span></code></pre></div>
 <p>The directory was created, files added, a git repository was
 initialised in the folder, and the reproducible environment was
 constructed with the renv package.</p>
@@ -489,12 +490,12 @@ named list: one element in the list per file in the template.</p>
 <p>The list elements may be named any proper name within R. However, the
 names must be unique and we recommend short names. These do not need to
 match/reference any other text in the template file.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_template <span class="ot">&lt;-</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">gitignore =</span> <span class="fu">list</span>(),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">readme =</span> <span class="fu">list</span>(),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">rproj =</span> <span class="fu">list</span>()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>my_template <span class="ot">&lt;-</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="at">gitignore =</span> <span class="fu">list</span>(),</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="at">readme =</span> <span class="fu">list</span>(),</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="at">rproj =</span> <span class="fu">list</span>()</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Each element of the list is itself a list. The lists contain three
 important pieces of information about each template file.</p>
 <ol style="list-style-type: decimal">
@@ -506,12 +507,12 @@ copy, or a dynamic file (described above).</p></li>
 </ol>
 <p>The metadata for the <code>README.md</code> file in the default
 template looks like this:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>readme <span class="ot">&lt;-</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_readme.md&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;README.md&quot;</span>, </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">TRUE</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>readme <span class="ot">&lt;-</span> </span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_readme.md&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;README.md&quot;</span>, </span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">TRUE</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Note that in this case, the location of the template file is pointing
 to a file location where the {starter} package is installed. If you are
 not saving your template in an R package, your
@@ -524,43 +525,43 @@ dynamic (<code>glue = FALSE</code>). The list is stored as an expression
 so the template meta data is not evaluated until you call the
 <code>create_project()</code> function, allowing files to be dynamically
 named and template files to be saved within a package.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>rproj <span class="ot">&lt;-</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_rproj.Rproj&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">filename =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{folder_name}.Rproj&quot;</span>), </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">FALSE</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>rproj <span class="ot">&lt;-</span> </span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_rproj.Rproj&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    <span class="at">filename =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{folder_name}.Rproj&quot;</span>), </span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">FALSE</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  ))</span></code></pre></div>
 <p>Below is an example of a simple custom template.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_template <span class="ot">&lt;-</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">readme =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_readme.md&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">filename =</span> <span class="st">&quot;README.md&quot;</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">TRUE</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    )),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">rproj =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_rproj.Rproj&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">filename =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{folder_name}.Rproj&quot;</span>),</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">FALSE</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    )),</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">gitignore =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_gitignore.txt&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">filename =</span> <span class="st">&quot;.gitignore&quot;</span>, </span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">TRUE</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>my_template <span class="ot">&lt;-</span> </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>    <span class="at">readme =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_readme.md&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>      <span class="at">filename =</span> <span class="st">&quot;README.md&quot;</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">TRUE</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    )),</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    <span class="at">rproj =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_rproj.Rproj&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>      <span class="at">filename =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">&quot;{folder_name}.Rproj&quot;</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">FALSE</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>    )),</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>    <span class="at">gitignore =</span> rlang<span class="sc">::</span><span class="fu">expr</span>(<span class="fu">list</span>(</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>      <span class="at">template_filename =</span> <span class="fu">system.file</span>(<span class="st">&quot;project_templates/default_gitignore.txt&quot;</span>, <span class="at">package =</span> <span class="st">&quot;starter&quot;</span>), </span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>      <span class="at">filename =</span> <span class="st">&quot;.gitignore&quot;</span>, </span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>      <span class="at">glue =</span> <span class="cn">TRUE</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>    ))</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Note that you are able to put files into subfolders by including the
 subfolder name in the <code>filename</code> argument. This can be done
 for any type of file. Here’s an example of what the metadata could look
 like if the user has a static Rmarkdown template called
 <code>template_analysis.Rmd</code> that they want to copy into a project
 subfolder called <code>scripts</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="st">&quot;C:/project_templates/template_analysis.Rmd&quot;</span>, </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;scripts/analysis.Rmd&quot;</span>, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">FALSE</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> </span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="at">template_filename =</span> <span class="st">&quot;C:/project_templates/template_analysis.Rmd&quot;</span>, </span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="at">filename =</span> <span class="st">&quot;scripts/analysis.Rmd&quot;</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="at">glue =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="advanced-features" class="section level3">
 <h3>Advanced Features</h3>
@@ -568,7 +569,7 @@ subfolder called <code>scripts</code>.</p>
 the file as a template attribute. The script will be sourced after
 project template has been placed. This feature is often used when you’d
 like to add an empty folder to your project.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(my_template, <span class="st">&quot;script_path&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;&lt;path to file&gt;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">attr</span>(my_template, <span class="st">&quot;script_path&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;&lt;path to file&gt;&quot;</span></span></code></pre></div>
 <p>Wrap the path to the script in an expression if you need to delay the
 evaluation of the path string.</p>
 <p>You can also override the <code>create_project()</code> arguments by
@@ -580,7 +581,7 @@ git repo and never use renv, attach this list
 <p>There is one last step—give your template a label. The label will be
 displayed each time the template is called in either
 <code>create_project()</code> or <code>use_project_file()</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(my_template, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;My 1st Project Template&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">attr</span>(my_template, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;My 1st Project Template&quot;</span></span></code></pre></div>
 <p>It is recommended you create the list elements named
 <code>&#39;readme&#39;</code> and <code>&#39;gitignore&#39;</code>. The
 <code>&#39;readme&#39;</code> element is used in the in the
@@ -594,16 +595,17 @@ elements, these useful functions will return errors.</p>
 have created a metadata list object, you can use them to create a new
 project folder with your custom template. The following code will get
 you started.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_project</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> project_path,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">template =</span> my_template <span class="co"># metadata list created above</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;My 1st Project Template&quot; template</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;C:/Users/SjobergD/AppData/Local/Temp/RtmpWkfxKI/My Project Folder&#39;</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.gitignore&quot;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * renv infrastructure has been generated for project &quot;C:/Users/SjobergD/AppData/Local/Temp/RtmpWkfxKI/My Project Folder&quot;.</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">create_project</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="at">path =</span> project_path,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="at">template =</span> my_template <span class="co"># metadata list created above</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>)</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;My 1st Project Template&quot; template</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&#39;</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.gitignore&quot;</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder/renv.lock&quot;.</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&quot;.</span></span></code></pre></div>
 </div>
 </div>
 
