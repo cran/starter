@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -370,12 +370,12 @@ will be created in a the folder called
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">open =</span> <span class="cn">FALSE</span> <span class="co"># don&#39;t open project in new RStudio session</span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>)</span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;Default Project Template&quot; template</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&#39;</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder&#39;</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;.gitignore&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.Rprofile&quot;</span></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder/renv.lock&quot;.</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&quot;.</span></span></code></pre></div>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder/renv.lock&quot;.</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder&quot;.</span></span></code></pre></div>
 <p>The directory was created, files added, a git repository was
 initialised in the folder, and the reproducible environment was
 constructed with the renv package.</p>
@@ -600,12 +600,12 @@ you started.</p>
 <span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="at">template =</span> my_template <span class="co"># metadata list created above</span></span>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>)</span>
 <span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt; ✔ Using &quot;My 1st Project Template&quot; template</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&#39;</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co">#&gt; ✔ Writing folder &#39;/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder&#39;</span></span>
 <span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt; ✔ Writing files &quot;README.md&quot;, &quot;My Project Folder.Rproj&quot;, and &quot;.gitignore&quot;</span></span>
 <span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising Git repo</span></span>
 <span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; ✔ Initialising renv project</span></span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder/renv.lock&quot;.</span></span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/Rtmp3CccU7/My Project Folder&quot;.</span></span></code></pre></div>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; - Lockfile written to &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder/renv.lock&quot;.</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; - renv infrastructure has been generated for project &quot;/private/var/folders/6f/gdjf_vxj2wl3jhmxdkd1hd_w0000gn/T/RtmpKfzf39/My Project Folder&quot;.</span></span></code></pre></div>
 </div>
 </div>
 

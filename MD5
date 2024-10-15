@@ -1,8 +1,8 @@
-92c6f8268cbeac1450562ddb88d0e820 *DESCRIPTION
+578aa091def6a4118fa13a9ac0fd0590 *DESCRIPTION
 dc4a3189f1603eaf5f971144f6b87b83 *NAMESPACE
-c8c3bf975f40d6108da40dbdc9cbfb1c *NEWS.md
+fbb8487f1f8ff2ac58ce31db0fd33e3b *NEWS.md
 a929e50cfd881063f24669a13f588a9f *R/create_project.R
-e32999f19a070f50ecc59fba6af009c9 *R/create_symlink.R
+49dd155c8af64609026802cbf2ebd0a6 *R/create_symlink.R
 3ce0f310f9870de9c3caab3419d1ace9 *R/data.R
 0152f05a55ade28413139c02d027c781 *R/starter-package.R
 fa691bf3352266a22a9884d36acc433d *R/sysdata.rda
@@ -12,13 +12,13 @@ f1fb4f2635cc7f0f5c17116d86dc500a *R/utils-keepers.R
 065957708d9168e053eb01457644560c *R/utils-project_root.R
 50a1b22030af9abca750021dcaef8dfd *R/utils-safely.R
 f02cc8e99f95a05b3de4663fce3867cf *R/utils-walkers.R
-42ec84f11f7567f3eb5993b0dbd3cb54 *README.md
-0f2c8d432824c076f7ba381a991120b0 *build/vignette.rds
+219cfd0904af5d5cb16bedcb87cdc652 *README.md
+98158e9cb2d0cc878fc2bb8768ee4d78 *build/vignette.rds
 216c04ab71cf056adf71801086f8ebdf *data/project_templates.rda
 480508534563ab6143d99908f6a1973b *inst/WORDLIST
-8da72e6bc55ad9052066ce2a4723faea *inst/doc/create_project.R
-19c16f33d16d2dfe36ccf371b854fae8 *inst/doc/create_project.Rmd
-51109c666e6dac4890d96d21caae1d43 *inst/doc/create_project.html
+fbd0405fbc21078d67cd5bd5c2c9e3e4 *inst/doc/create_project.R
+17e1e0f19a3390439ea41e42812225a2 *inst/doc/create_project.Rmd
+bf72f449e1a17e398d1ebe8441959048 *inst/doc/create_project.html
 9154426056992b7a734b2167deadca54 *inst/project_templates/analysis_template/analysis.Rmd
 30af5bee9048979f8106bb2daf22dd8a *inst/project_templates/analysis_template/derived_variables.xlsx
 40d3dd31618d44b4b23c01536c24fbe7 *inst/project_templates/analysis_template/doc_template.docx
@@ -31,7 +31,7 @@ e2f900a28bd51fee6f16f41d2b798026 *inst/project_templates/default_readme.md
 c7d3e9687a564b8f0a8ec46384aacdcc *inst/project_templates/default_rprofile.R
 3c0d5bf4a75f9b777c330496a66da1a7 *inst/project_templates/default_rproj.Rproj
 a89a4c2c0cb8c5894038e7c472dc354f *man/create_project.Rd
-077871157d18d04db3139c9a0c5c8b39 *man/create_symlink.Rd
+a12e97f0e2e6a9beb32e421f3d233143 *man/create_symlink.Rd
 502a5f8dd6ba90060101596366cb7d58 *man/figures/README-pressure-1.png
 0ed837d7689278bd54e23b9abe72272f *man/figures/logo.png
 99a52e3c534b010415098e811ed85d36 *man/project_templates.Rd
@@ -41,4 +41,4 @@ e37c0fe487c33919eb2820f5ab239a6b *tests/spelling.R
 3c5de73af56d8d0e79f963909cdbd1e3 *tests/testthat.R
 08f2aad692ea29f480a3419a87cc076a *tests/testthat/test-create_project.R
 0c7bcbbf6948085bfec1239f5ae851ef *tests/testthat/test-create_symlink.R
-19c16f33d16d2dfe36ccf371b854fae8 *vignettes/create_project.Rmd
+17e1e0f19a3390439ea41e42812225a2 *vignettes/create_project.Rmd
